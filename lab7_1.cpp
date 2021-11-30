@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
-
 using namespace std;
+
 
 string func1(string x){
 	int i = 0, L = x.size();
@@ -33,9 +33,38 @@ string func3(string x){
 	return y;	
 }
 
+string check(string x, string y){
+	int i = 0, L = x.size();
+	string palindromeresult_text;
+
+	while(i < L){
+		if(x[i] == y[i])
+		{
+			palindromeresult_text = "Yes";
+			i++;
+		}
+		else
+		{
+			palindromeresult_text = "No";
+			L = 0;
+		}
+	}
+	return palindromeresult_text;	
+}
+
 int main(){
-    cout >> "Input text: "
-    cout >> "Reversed text: "
-    cout >> "Palindrome: "
+	string input_text;
+	string output_text;
+	
+
+    cout << "Input text: ";
+	cin >> input_text;
+	output_text = func1(input_text);
+    cout << "Reversed text: " << output_text << endl;
+
+	input_text = func2(input_text);
+	output_text = func2(output_text);
+	
+    cout << "Palindrome: " << check(input_text, output_text);
     return 0;
 }
